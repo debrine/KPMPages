@@ -68,6 +68,5 @@ rootElement.render(
         <Route path='/' element={<Index />} />
       </Routes>
     </BrowserRouter>
-    ,
   </React.StrictMode>
 );
