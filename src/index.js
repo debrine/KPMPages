@@ -64,7 +64,7 @@ rootElement.render(
       <Routes>
         <Route path='/NewProject' element={<NewProject />} />
         <Route path='/ViewProject' element={<ViewProject />} />
-        <Route path='/' element={<Index />} />
+        <Route path='/KPMPages/' element={<Index />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
