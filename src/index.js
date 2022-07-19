@@ -17,41 +17,43 @@ import { ViewProject } from './ViewProject';
 export const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Box
-      sx={{
-        backgroundImage: `url(${wool})`,
-        height: '100vh',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }}>
+    <React.StrictMode>
       <Box
         sx={{
-          textAlign: 'center',
-          paddingTop: '100px',
+          backgroundImage: `url(${wool})`,
+          height: '100vh',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
         }}>
-        <Title titleText={'Knitting Project Manager'} />
+        <Box
+          sx={{
+            textAlign: 'center',
+            paddingTop: '100px',
+          }}>
+          <Title titleText={'Knitting Project Manager'} />
 
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <WelcomePageOptionButtons
-            btnText={'New Project'}
-            onClick={() => {
-              setIsOpen(true);
-            }}
-          />
-          <NewProjectSizeAndColourSelectionModal
-            open={isOpen}
-            setIsOpen={setIsOpen}
-          />
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <WelcomePageOptionButtons
+              btnText={'New Project'}
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            />
+            <NewProjectSizeAndColourSelectionModal
+              open={isOpen}
+              setIsOpen={setIsOpen}
+            />
 
-          <Link to='/'>
-            <Logo />
-          </Link>
-          <Link to='/ViewProject'>
-            <WelcomePageOptionButtons btnText={'View Projects'} />
-          </Link>
+            <Link to='/'>
+              <Logo />
+            </Link>
+            <Link to='/ViewProject'>
+              <WelcomePageOptionButtons btnText={'View Projects'} />
+            </Link>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </React.StrictMode>
   );
 };
 
