@@ -16,6 +16,8 @@ import { ViewProject } from './ViewProject';
 
 export const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  console.log('the app is getting run');
   return (
     <Box
       sx={{
