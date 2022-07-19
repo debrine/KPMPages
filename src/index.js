@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './index.css';
-import { render } from 'react-dom';
+//import { render } from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
