@@ -3,7 +3,7 @@ import './index.css';
 //import { render } from 'react-dom';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
+import React from 'react';
 import Box from '@mui/material/Box';
 
 import { Title } from './components/title';
@@ -17,54 +17,54 @@ import { ViewProject } from './ViewProject';
 export const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <React.StrictMode>
+    <Box
+      sx={{
+        backgroundImage: `url(${wool})`,
+        height: '100vh',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }}>
       <Box
         sx={{
-          backgroundImage: `url(${wool})`,
-          height: '100vh',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+          textAlign: 'center',
+          paddingTop: '100px',
         }}>
-        <Box
-          sx={{
-            textAlign: 'center',
-            paddingTop: '100px',
-          }}>
-          <Title titleText={'Knitting Project Manager'} />
+        <Title titleText={'Knitting Project Manager'} />
 
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <WelcomePageOptionButtons
-              btnText={'New Project'}
-              onClick={() => {
-                setIsOpen(true);
-              }}
-            />
-            <NewProjectSizeAndColourSelectionModal
-              open={isOpen}
-              setIsOpen={setIsOpen}
-            />
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <WelcomePageOptionButtons
+            btnText={'New Project'}
+            onClick={() => {
+              setIsOpen(true);
+            }}
+          />
+          <NewProjectSizeAndColourSelectionModal
+            open={isOpen}
+            setIsOpen={setIsOpen}
+          />
 
-            <Link to='/'>
-              <Logo />
-            </Link>
-            <Link to='/ViewProject'>
-              <WelcomePageOptionButtons btnText={'View Projects'} />
-            </Link>
-          </Box>
+          <Link to='/'>
+            <Logo />
+          </Link>
+          <Link to='/ViewProject'>
+            <WelcomePageOptionButtons btnText={'View Projects'} />
+          </Link>
         </Box>
       </Box>
-    </React.StrictMode>
+    </Box>
   );
 };
 
 const rootElement = ReactDOM.createRoot(document.getElementById('root'));
 rootElement.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path='/NewProject' element={<NewProject />} />
-      <Route path='/ViewProject' element={<ViewProject />} />
-      <Route path='/' element={<Index />} />
-    </Routes>
-  </BrowserRouter>,
-  rootElement
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/NewProject' element={<NewProject />} />
+        <Route path='/ViewProject' element={<ViewProject />} />
+        <Route path='/' element={<Index />} />
+      </Routes>
+    </BrowserRouter>
+    ,
+  </React.StrictMode>
 );
