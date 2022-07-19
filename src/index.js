@@ -58,6 +58,7 @@ export const Index = () => {
 const rootElement = ReactDOM.createRoot(document.getElementById('root'));
 rootElement.render(
   <React.StrictMode>
+    <p>hello</p>
     <BrowserRouter>
       <Routes>
         <Route path='/NewProject' element={<NewProject />} />
