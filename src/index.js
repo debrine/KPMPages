@@ -57,7 +57,7 @@ export const Index = () => {
   );
 };
 
-const rootElement = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root');
 render(
   <BrowserRouter>
     <Routes>
