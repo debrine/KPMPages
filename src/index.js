@@ -45,10 +45,10 @@ export const Index = () => {
             setIsOpen={setIsOpen}
           />
 
-          <Link to='/'>
+          <Link to='/KPMPages'>
             <Logo />
           </Link>
-          <Link to='/ViewProject'>
+          <Link to='/KPMPages/ViewProject'>
             <WelcomePageOptionButtons btnText={'View Projects'} />
           </Link>
         </Box>
@@ -57,15 +57,13 @@ export const Index = () => {
   );
 };
 
-const rootElement = document.getElementById('root');
+const rootElement = ReactDOM.createRoot(document.getElementById('root'));
 render(
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<p>no words</p>} />
-      <Route path='/KPMPages/' element={<p>double /</p>} />
-      <Route path='/NewProject' element={<NewProject />} />
-      <Route path='/ViewProject' element={<ViewProject />} />
-      <Route path='/KPMPages' element={<Index />} />
+      <Route path='/KPMPages/NewProject' element={<NewProject />} />
+      <Route path='/KPMPages/ViewProject' element={<ViewProject />} />
+      <Route path='/KPMPages/' element={<Index />} />
     </Routes>
   </BrowserRouter>,
   rootElement
