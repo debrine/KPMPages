@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './index.css';
-//import { render } from 'react-dom';
-import ReactDOM from 'react-dom/client';
+import { render } from 'react-dom';
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import React from 'react';
 import Box from '@mui/material/Box';
@@ -58,14 +58,15 @@ export const Index = () => {
 };
 
 const rootElement = ReactDOM.createRoot(document.getElementById('root'));
-rootElement.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/NewProject' element={<NewProject />} />
-        <Route path='/ViewProject' element={<ViewProject />} />
-        <Route path='/KPMPages' element={<Index />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+render(
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<p>no words</p>} />
+      <Route path='/KPMPages/' element={<p>double /</p>} />
+      <Route path='/NewProject' element={<NewProject />} />
+      <Route path='/ViewProject' element={<ViewProject />} />
+      <Route path='/KPMPages' element={<Index />} />
+    </Routes>
+  </BrowserRouter>,
+  rootElement
 );
